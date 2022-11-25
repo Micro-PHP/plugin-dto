@@ -1,0 +1,22 @@
+{
+    "name": "micro/plugin-dto",
+    "description": "Micro Framework: Plugin for generating DTO classes. Based on micro/dto library.",
+    "type": "library",
+    "license": "MIT",
+    "version": "1.0",
+    "autoload": {
+        "psr-4": {
+            "Micro\\Plugin\\DTO\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Stanislau Komar",
+            "email": "stanislau_komar@epam.com"
+        }
+    ],
+    "require": {
+        "micro/dto": "^1.0",
+        "symfony/finder": "^5|^6"
+    }
+}
