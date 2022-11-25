@@ -16,7 +16,8 @@
         }
     ],
     "require": {
-        "micro/dto": "^1.0",
+        "micro/kernel": "^1",
+        "micro/dto": "^1",
         "symfony/finder": "^5|^6"
     }
 }
