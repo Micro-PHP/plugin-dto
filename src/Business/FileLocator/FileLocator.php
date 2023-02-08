@@ -1,26 +1,38 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ *  This file is part of the Micro framework package.
+ *
+ *  (c) Stanislau Komar <kost@micro-php.net>
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ */
+
 namespace Micro\Plugin\DTO\Business\FileLocator;
 
 use Micro\Kernel\App\AppKernelInterface;
 use Micro\Plugin\DTO\DTOPluginConfigurationInterface;
 use Symfony\Component\Finder\Finder;
 
-class FileLocator implements FileLocatorInterface
+readonly class FileLocator implements FileLocatorInterface
 {
     /**
      * @param DTOPluginConfigurationInterface $DTOPluginConfiguration
-     * @param AppKernelInterface $appKernel
+     * @param AppKernelInterface              $appKernel
      */
     public function __construct(
-        private readonly DTOPluginConfigurationInterface $DTOPluginConfiguration,
-        private readonly AppKernelInterface $appKernel
-    ) {}
+        private DTOPluginConfigurationInterface $DTOPluginConfiguration,
+        private AppKernelInterface $appKernel
+    ) {
+    }
 
     /**
      * {@inheritDoc}
      */
-    public function lookup(): iterable
+    public function lookup(): array
     {
         $finder = $this->createSymfonyFinder();
         $result = [];
@@ -52,12 +64,17 @@ class FileLocator implements FileLocatorInterface
     }
 
     /**
-     * @return iterable
+     * @return iterable<string>
      */
     protected function createPathList(): iterable
     {
         foreach ($this->appKernel->plugins() as $plugin) {
-            yield $this->getPluginPathDefinition($plugin);
+            $path = $this->getPluginPathDefinition($plugin);
+            if (empty($path)) {
+                continue;
+            }
+
+            yield $path;
         }
 
         foreach ($this->DTOPluginConfiguration->getSchemaPaths() as $path) {
@@ -68,12 +85,16 @@ class FileLocator implements FileLocatorInterface
     /**
      * @param object $plugin
      *
-     * @return string
+     * @return string|null
      */
-    protected function getPluginPathDefinition(object $plugin): string
+    protected function getPluginPathDefinition(object $plugin): string|null
     {
         $reflector = new \ReflectionClass($plugin);
+        $filename = $reflector->getFileName();
+        if (!$filename) {
+            return null;
+        }
 
-        return dirname($reflector->getFileName(), 2);
+        return \dirname($filename, 2);
     }
 }
