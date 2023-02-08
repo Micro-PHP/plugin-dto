@@ -11,12 +11,8 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\DTO\Business\Generator;
+namespace Micro\Plugin\DTO\Test\Unit;
 
-interface GeneratorFactoryInterface
+class TestPlugin
 {
-    /**
-     * @return GeneratorInterface
-     */
-    public function create(): GeneratorInterface;
 }

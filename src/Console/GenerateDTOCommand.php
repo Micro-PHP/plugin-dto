@@ -1,8 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
+/*
+ *  This file is part of the Micro framework package.
+ *
+ *  (c) Stanislau Komar <kost@micro-php.net>
+ *
+ *  For the full copyright and license information, please view the LICENSE
+ *  file that was distributed with this source code.
+ */
+
 namespace Micro\Plugin\DTO\Console;
 
-use Micro\Plugin\DTO\Business\FileLocator\FileLocatorFactory;
 use Micro\Plugin\DTO\Facade\DTOFacadeInterface;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
@@ -10,27 +20,13 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class GenerateDTOCommand extends Command
 {
+    protected const HELP = 'Generate DTO classes.';
     protected static $defaultName = 'micro:dto:generate';
-    protected const HELP          = 'Generate DTO classes.';
 
     public function __construct(
         private readonly DTOFacadeInterface $DTOFacade
-    )
-    {
+    ) {
         parent::__construct(self::$defaultName);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    protected function configure(): void
-    {
-    //    $this->setHelp(self::HELP);
-    //    $this->addArgument(
-    //        self::ARG_CONSUMER,
-    //        InputArgument::OPTIONAL,
-    //        'Consumer name',
-    //        AmqpPluginConfiguration::CONSUMER_DEFAULT);
     }
 
     /**
@@ -46,8 +42,6 @@ class GenerateDTOCommand extends Command
             $output->writeln(sprintf('<error> %s </error>', $e->getMessage()));
 
             throw $e;
-
-            return Command::FAILURE;
         }
 
         return Command::SUCCESS;
