@@ -21,6 +21,8 @@ use Micro\Framework\Kernel\Plugin\PluginDependedInterface;
 use Micro\Kernel\App\AppKernelInterface;
 use Micro\Library\DTO\SerializerFacadeDefault;
 use Micro\Library\DTO\SerializerFacadeInterface;
+use Micro\Library\DTO\ValidatorFacadeDefault;
+use Micro\Library\DTO\ValidatorFacadeInterface;
 use Micro\Plugin\DTO\Business\FileLocator\FileLocatorFactory;
 use Micro\Plugin\DTO\Business\FileLocator\FileLocatorFactoryInterface;
 use Micro\Plugin\DTO\Business\Generator\GeneratorFactory;
@@ -59,6 +61,10 @@ class DTOPlugin implements DependencyProviderInterface, ConfigurableInterface, P
         $container->register(SerializerFacadeInterface::class, function () {
             return $this->createDTOSerializerFacade();
         });
+
+        $container->register(ValidatorFacadeInterface::class, function () {
+            return $this->createDtoValidatorFacade();
+        });
     }
 
     public function getDependedPlugins(): iterable
@@ -74,6 +80,11 @@ class DTOPlugin implements DependencyProviderInterface, ConfigurableInterface, P
     protected function createDTOSerializerFacade(): SerializerFacadeInterface
     {
         return new SerializerFacadeDefault();
+    }
+
+    protected function createDtoValidatorFacade(): ValidatorFacadeInterface
+    {
+        return new ValidatorFacadeDefault();
     }
 
     /**
