@@ -15,6 +15,7 @@ namespace Micro\Plugin\DTO\Test\Unit;
 
 use Micro\Kernel\App\AppKernel;
 use Micro\Library\DTO\SerializerFacadeInterface;
+use Micro\Library\DTO\ValidatorFacadeInterface;
 use Micro\Plugin\DTO\DTOPlugin;
 use Micro\Plugin\DTO\Facade\DTOFacadeInterface;
 use PHPUnit\Framework\TestCase;
@@ -30,5 +31,6 @@ class DTOPluginTest extends TestCase
         $kernel->run();
         $this->assertInstanceOf(DTOFacadeInterface::class, $kernel->container()->get(DTOFacadeInterface::class));
         $this->assertInstanceOf(SerializerFacadeInterface::class, $kernel->container()->get(SerializerFacadeInterface::class));
+        $this->assertInstanceOf(ValidatorFacadeInterface::class, $kernel->container()->get(ValidatorFacadeInterface::class));
     }
 }

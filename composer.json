@@ -10,7 +10,7 @@
         }
     ],
     "require": {
-        "micro/dto": "^1",
+        "micro/dto": "^1.6.2",
         "micro/kernel-app": "^1.6",
         "micro/plugin-logger-core": "^1.6",
         "symfony/finder": "^6"
