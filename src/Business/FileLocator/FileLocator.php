@@ -41,7 +41,7 @@ readonly class FileLocator implements FileLocatorInterface
             $result[] = $file->getRealPath();
         }
 
-        return $result;
+        return array_unique($result);
     }
 
     /**
