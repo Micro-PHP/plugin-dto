@@ -13,12 +13,12 @@ declare(strict_types=1);
 
 namespace Micro\Plugin\DTO;
 
-use Micro\Component\DependencyInjection\Container;
-use Micro\Framework\Kernel\Plugin\ConfigurableInterface;
-use Micro\Framework\Kernel\Plugin\DependencyProviderInterface;
-use Micro\Framework\Kernel\Plugin\PluginConfigurationTrait;
-use Micro\Framework\Kernel\Plugin\PluginDependedInterface;
-use Micro\Kernel\App\AppKernelInterface;
+use Micro\Framework\DependencyInjection\Container;
+use Micro\Framework\BootConfiguration\Plugin\ConfigurableInterface;
+use Micro\Framework\BootDependency\Plugin\DependencyProviderInterface;
+use Micro\Framework\BootConfiguration\Plugin\PluginConfigurationTrait;
+use Micro\Framework\BootPluginDependent\Plugin\PluginDependedInterface;
+use Micro\Framework\KernelApp\AppKernelInterface;
 use Micro\Library\DTO\SerializerFacadeDefault;
 use Micro\Library\DTO\SerializerFacadeInterface;
 use Micro\Library\DTO\ValidatorFacadeDefault;

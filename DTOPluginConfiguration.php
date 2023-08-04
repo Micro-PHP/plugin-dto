@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Micro\Plugin\DTO;
 
-use Micro\Framework\Kernel\Configuration\PluginConfiguration;
+use Micro\Framework\BootConfiguration\Configuration\PluginConfiguration;
 
 class DTOPluginConfiguration extends PluginConfiguration implements DTOPluginConfigurationInterface
 {

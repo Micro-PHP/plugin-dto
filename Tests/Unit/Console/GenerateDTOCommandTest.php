@@ -11,7 +11,7 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\DTO\Test\Unit\Console;
+namespace Micro\Plugin\DTO\Tests\Unit\Console;
 
 use Micro\Plugin\DTO\Console\GenerateDTOCommand;
 use Micro\Plugin\DTO\Facade\DTOFacadeInterface;

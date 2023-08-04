@@ -11,9 +11,9 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\DTO\Test\Unit;
+namespace Micro\Plugin\DTO\Tests\Unit;
 
-use Micro\Framework\Kernel\Configuration\DefaultApplicationConfiguration;
+use Micro\Framework\BootConfiguration\Configuration\DefaultApplicationConfiguration;
 use Micro\Plugin\DTO\DTOPluginConfiguration;
 use PHPUnit\Framework\TestCase;
 

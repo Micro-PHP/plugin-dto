@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace Micro\Plugin\DTO\Business\FileLocator;
 
-use Micro\Kernel\App\AppKernelInterface;
+use Micro\Framework\KernelApp\AppKernelInterface;
 use Micro\Plugin\DTO\DTOPluginConfigurationInterface;
 use Symfony\Component\Finder\Finder;
 

@@ -11,9 +11,9 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\DTO\Test\Unit;
+namespace Micro\Plugin\DTO\Tests\Unit;
 
-use Micro\Kernel\App\AppKernel;
+use Micro\Framework\KernelApp\AppKernel;
 use Micro\Library\DTO\SerializerFacadeInterface;
 use Micro\Library\DTO\ValidatorFacadeInterface;
 use Micro\Plugin\DTO\DTOPlugin;

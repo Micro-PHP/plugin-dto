@@ -11,13 +11,13 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\DTO\Test\Unit\Business\FileLocator;
+namespace Micro\Plugin\DTO\Tests\Unit\Business\FileLocator;
 
-use Micro\Framework\Kernel\Configuration\DefaultApplicationConfiguration;
-use Micro\Kernel\App\AppKernelInterface;
+use Micro\Framework\BootConfiguration\Configuration\DefaultApplicationConfiguration;
+use Micro\Framework\KernelApp\AppKernelInterface;
 use Micro\Plugin\DTO\Business\FileLocator\FileLocator;
 use Micro\Plugin\DTO\DTOPluginConfiguration;
-use Micro\Plugin\DTO\Test\Unit\TestPlugin;
+use Micro\Plugin\DTO\Tests\Unit\TestPlugin;
 use PHPUnit\Framework\TestCase;
 
 class FileLocatorTest extends TestCase

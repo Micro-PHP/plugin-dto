@@ -11,7 +11,7 @@ declare(strict_types=1);
  *  file that was distributed with this source code.
  */
 
-namespace Micro\Plugin\DTO\Test\Unit\Business\Generator;
+namespace Micro\Plugin\DTO\Tests\Unit\Business\Generator;
 
 use Micro\Plugin\DTO\Business\FileLocator\FileLocatorFactoryInterface;
 use Micro\Plugin\DTO\Business\Generator\GeneratorFactory;
