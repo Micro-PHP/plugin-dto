@@ -43,9 +43,6 @@ class DTOPlugin implements DependencyProviderInterface, ConfigurableInterface, P
 
     private LoggerFacadeInterface $loggerFacade;
 
-    /**
-     * {@inheritDoc}
-     */
     public function provideDependencies(Container $container): void
     {
         $container->register(DTOFacadeInterface::class, function (
